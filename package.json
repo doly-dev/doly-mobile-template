@@ -1,0 +1,63 @@
+{
+  "name": "doly-mobile-template",
+  "version": "1.0.0",
+  "prettier": "prettier-config-doly",
+  "description": "Development web with doly-cli.",
+  "scripts": {
+    "start": "doly dev",
+    "start:no-mock": "cross-env MOCK=none doly dev",
+    "build": "doly build",
+    "lint": "eslint --ext .jsx,.js src mocker",
+    "lint:prettier": "prettier-files check",
+    "prettier": "prettier-files write",
+    "lint:fix": "eslint --fix --ext .js,.jsx src mocker",
+    "lint-staged": "lint-staged",
+    "lint-staged:js": "eslint --ext .js,.jsx"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@wonder-ui/core": "^0.5.9",
+    "antd-mobile": "^2.3.1",
+    "axios": "^0.19.0",
+    "core-js": "^3.2.1",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "regenerator-runtime": "^0.13.3",
+    "styled-components": "^4.3.2"
+  },
+  "devDependencies": {
+    "babel-plugin-import": "^1.12.1",
+    "cross-env": "^5.2.1",
+    "doly-cli": "0.6.4",
+    "eslint": "^5.16.0",
+    "eslint-config-doly-react": "0.0.3-alpha.0",
+    "eslint-config-prettier": "^6.3.0",
+    "husky": "^2.0.0",
+    "lint-staged": "^9.2.5",
+    "prettier": "^1.18.2",
+    "prettier-config-doly": "0.0.1-alpha.0",
+    "prettier-files": "0.0.1-alpha.2"
+  },
+  "lint-staged": {
+    "**/*.{js,ts,tsx,jsx,less}": [
+      "prettier-files check",
+      "git add"
+    ],
+    "**/*.{js,jsx}": "npm run lint-staged:js"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint-staged"
+    }
+  },
+  "prettierFiles": [
+    "src/**/*.js*",
+    "src/**/*.ts*",
+    "src/**/*.less",
+    "config/**/*.js*",
+    "scripts/**/*.js",
+    "doly.config.js",
+    "mocker/**/*.js"
+  ]
+}

@@ -11,7 +11,12 @@ export default [
     exact: true
   },
   {
-    redirect: "/404",
-    async: () => import("~/pages/exception")
+    path: "/404",
+    async: () => import("~/pages/exception"),
+    exact: true
+  },
+  {
+    path: "/",
+    redirect: "/404"
   }
 ];

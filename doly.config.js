@@ -15,7 +15,15 @@ module.exports = {
   // 扩展 babel-loader 的 plugins
   extraBabelPlugins: [
     ["import", { libraryName: "antd-mobile", style: true }],
-    ["import", { libraryName: "@wonder-ui/core", libraryDirectory: "components", "camel2DashComponentName": false }, "@wonder-ui/core"]
+    [
+      "import",
+      {
+        libraryName: "@wonder-ui/core",
+        libraryDirectory: "components",
+        camel2DashComponentName: false
+      },
+      "@wonder-ui/core"
+    ]
   ],
 
   // 定义编译时变量替换

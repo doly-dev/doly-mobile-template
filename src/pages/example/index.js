@@ -52,11 +52,22 @@ export default class ExamplePage extends React.Component {
         <NavBar
           icon={<Icon type="left" />}
           onLeftClick={() => {
-            this.props.history.goBack();
+            const { history } = this.props;
+            history.goBack();
           }}
-        >示例</NavBar>
+        >
+          示例
+        </NavBar>
         <Block space={1} />
-        <Button to="notFound" variant="outlined" size="medium" color="primary" fullWidth>点击跳转不存在的页面</Button>
+        <Button
+          to="notFound"
+          variant="outlined"
+          size="medium"
+          color="primary"
+          fullWidth
+        >
+          点击跳转不存在的页面
+        </Button>
         <h3>状态管理</h3>
         <p>暂时没有内置状态管理，推荐使用</p>
         <ol>
@@ -78,7 +89,10 @@ export default class ExamplePage extends React.Component {
           </button>
           {notices.length > 0 && (
             <a
+              role="button"
               onClick={this.clearNotices}
+              onKeyDown={() => {}}
+              tabIndex="0"
               style={{ marginLeft: 10 }}
             >
               清空
@@ -93,8 +107,8 @@ export default class ExamplePage extends React.Component {
               ))}
             </ul>
           ) : (
-              <span style={{ color: "gray" }}>暂无通知</span>
-            )}
+            <span style={{ color: "gray" }}>暂无通知</span>
+          )}
         </div>
         <h3>CSS</h3>
         <p>

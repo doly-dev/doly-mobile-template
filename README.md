@@ -24,7 +24,7 @@
 │   ├── components           # 组件
 │   ├── pages                # 页面
 │   ├── services             # 后台接口服务
-│   ├── utils                # 工具库
+│   ├── utils                # 工具
 │   ├── app.js               # 入口 JS
 │   ├── router.config.js     # 路由配置
 │   ├── index.html           # html页面

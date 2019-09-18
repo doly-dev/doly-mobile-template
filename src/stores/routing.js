@@ -1,3 +1,3 @@
-import { RouterStore } from '@wonder-ui/core';
+import { RouterStore } from "@wonder-ui/core";
 
-export default new RouterStore;
+export default new RouterStore();

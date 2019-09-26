@@ -29,7 +29,7 @@
   "devDependencies": {
     "babel-plugin-import": "^1.12.1",
     "cross-env": "^5.2.1",
-    "doly-cli": "0.6.5",
+    "doly-cli": "0.6.6",
     "eslint": "^5.16.0",
     "eslint-config-doly-react": "0.0.3-alpha.0",
     "eslint-config-prettier": "^6.3.0",

@@ -2,7 +2,7 @@ const path = require("path");
 
 module.exports = {
   html: {
-    title: "Doly Simple Template",
+    title: "Doly Mobile Template",
     template: "src/document.ejs",
     filename: "index.html"
   },

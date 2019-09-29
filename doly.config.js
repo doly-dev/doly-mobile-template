@@ -4,7 +4,11 @@ module.exports = {
   html: {
     title: "Doly Mobile Template",
     template: "src/document.ejs",
-    filename: "index.html"
+    filename: "index.html",
+    minify: {
+      removeComments: true,
+      collapseWhitespace: true
+    }
   },
 
   // 别名

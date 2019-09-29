@@ -1,5 +1,5 @@
 import React from "react";
-import { Page, Button, Block } from "@wonder-ui/core";
+import { Page, Block } from "@wonder-ui/core";
 import { NavBar, Icon } from "antd-mobile";
 
 import services from "~/services";
@@ -59,7 +59,7 @@ export default class ExamplePage extends React.Component {
           示例
         </NavBar>
         <Block space={1} />
-        <Button
+        {/* <Button
           to="notFound"
           variant="outlined"
           size="medium"
@@ -67,7 +67,7 @@ export default class ExamplePage extends React.Component {
           fullWidth
         >
           点击跳转不存在的页面
-        </Button>
+        </Button> */}
         <h3>状态管理</h3>
         <p>暂时没有内置状态管理，推荐使用</p>
         <ol>

@@ -29,6 +29,7 @@ module.exports = {
       "@wonder-ui/core"
     ]
   ],
+  cssInline: true,
 
   // 定义编译时变量替换
   define: {

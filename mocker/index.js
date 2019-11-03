@@ -1,6 +1,6 @@
 const { existsSync } = require("fs");
 const { join } = require("path");
-const delay = require("doly-cli/mocker-api/delay"); // eslint-disable-line
+const delay = require("doly-mocker-api/utils/delay");
 const api = require("../src/services/api");
 
 const noMock = process.env.MOCK === "none";

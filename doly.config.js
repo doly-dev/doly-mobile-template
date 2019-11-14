@@ -2,7 +2,6 @@ const path = require("path");
 
 module.exports = {
   html: {
-    title: "Doly Mobile Template",
     template: "src/document.ejs",
     filename: "index.html",
     minify: {
@@ -36,6 +35,10 @@ module.exports = {
     // api 地址
     API_URL: "",
     DEV: true
+  },
+
+  devServer: {
+    hot: false
   },
 
   // 不同环境配置

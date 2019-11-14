@@ -17,14 +17,14 @@ export default function() {
         >
           示例
         </ListItem>
-        {/* <ListItem
+        <ListItem
           arrow="horizontal"
           onClick={() => {
             routing.push("notFound");
           }}
         >
           不存在的页面
-        </ListItem> */}
+        </ListItem>
       </List>
     </Page>
   );

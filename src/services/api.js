@@ -18,6 +18,11 @@ const apiConfig = {
     name: "获取通知列表",
     url: "/api/notices",
     method: "get"
+  },
+  getUserInfo: {
+    name: "获取用户信息",
+    url: "/api/userinfo",
+    method: "post"
   }
 };
 

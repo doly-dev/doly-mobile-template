@@ -28,7 +28,12 @@ const createApi = (apiInfo, res) => {
   if (typeof res === "function") {
     ret = res;
   } else if (typeof res === "string") {
-    ret = { ...responseDataStructure, ...require(res) }; // eslint-disable-line
+    res = require(res); // eslint-disable-line
+    if (typeof res === "function") {
+      ret = res;
+    } else {
+      ret = { ...responseDataStructure, ...res }; // eslint-disable-line
+    }
   } else {
     ret = { ...responseDataStructure, res };
   }

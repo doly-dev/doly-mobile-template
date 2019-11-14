@@ -9,10 +9,10 @@ export default [
     path: "/example",
     async: () => import("~/pages/example"),
     exact: true
+  },
+  {
+    path: "/404",
+    async: () => import("~/pages/exception"),
+    exact: true
   }
-  // {
-  //   path: "/404",
-  //   async: () => import("~/pages/exception"),
-  //   exact: true
-  // }
 ];

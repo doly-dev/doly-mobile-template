@@ -1,5 +1,5 @@
 import React from "react";
-import { Page, Block } from "@wonder-ui/core";
+import { Page, Block, Button } from "@wonder-ui/core";
 import { NavBar, Icon } from "antd-mobile";
 
 import services from "~/services";
@@ -11,15 +11,39 @@ import styles from "./style.less";
 export default class ExamplePage extends React.Component {
   state = {
     loading: false,
-    notices: []
+    notices: [],
+    username: "",
+    age: "",
+    token: ""
+  };
+
+  componentDidMount() {
+    this.auth().then(res => {
+      this.setState({
+        ...res
+      });
+    });
+  }
+
+  auth = () => {
+    const loginPromise = services.login();
+    const userinfoPromise = services.getUserInfo();
+
+    return Promise.all([loginPromise, userinfoPromise]).then(res => {
+      const { token } = res[0];
+      const {
+        data: { username, age }
+      } = res[1];
+
+      return {
+        token,
+        username,
+        age
+      };
+    });
   };
 
   getNotices = () => {
-    const { loading } = this.state;
-    if (loading) {
-      return;
-    }
-
     this.setState({
       loading: true
     });
@@ -45,7 +69,7 @@ export default class ExamplePage extends React.Component {
   };
 
   render() {
-    const { loading, notices } = this.state;
+    const { loading, notices, username, age, token } = this.state;
 
     return (
       <Page name="示例">
@@ -59,7 +83,7 @@ export default class ExamplePage extends React.Component {
           示例
         </NavBar>
         <Block space={1} />
-        {/* <Button
+        <Button
           to="notFound"
           variant="outlined"
           size="medium"
@@ -67,7 +91,7 @@ export default class ExamplePage extends React.Component {
           fullWidth
         >
           点击跳转不存在的页面
-        </Button> */}
+        </Button>
         <h3>状态管理</h3>
         <p>暂时没有内置状态管理，推荐使用</p>
         <ol>
@@ -108,6 +132,11 @@ export default class ExamplePage extends React.Component {
             <span style={{ color: "gray" }}>暂无通知</span>
           )}
         </div>
+        <br />
+        <p>token: {token}</p>
+        <p>username: {username}</p>
+        <p>age: {age}</p>
+        <hr />
         <h3>CSS</h3>
         <p>
           默认使用

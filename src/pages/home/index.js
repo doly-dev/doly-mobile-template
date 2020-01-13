@@ -20,7 +20,7 @@ export default function() {
         <ListItem
           arrow="horizontal"
           onClick={() => {
-            routing.push("notFound");
+            routing.push("notFoundPage");
           }}
         >
           不存在的页面

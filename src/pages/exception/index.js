@@ -1,16 +1,16 @@
 import React from "react";
 import { Page, Button, Block } from "@wonder-ui/core";
 import { NavBar, Icon } from "antd-mobile";
+import routing from "~/stores/routing";
 
 export default class ExceptionPage extends React.PureComponent {
   render() {
     return (
-      <Page name="错误页面">
+      <Page name="页面不存在">
         <NavBar
           icon={<Icon type="left" />}
           onLeftClick={() => {
-            const { history } = this.props;
-            history.goBack();
+            routing.goBack();
           }}
         >
           404
@@ -22,8 +22,7 @@ export default class ExceptionPage extends React.PureComponent {
           color="primary"
           fullWidth
           onClick={() => {
-            const { history } = this.props;
-            history.goBack();
+            routing.goBack();
           }}
         >
           返回上一页

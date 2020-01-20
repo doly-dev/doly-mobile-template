@@ -4,6 +4,7 @@
     "no-script-url": 0,
     "no-restricted-syntax": 0,
     "linebreak-style": 0,
+    "import/extensions": 0,
     "import/no-unresolved": [2, { "ignore": ["^~"] }],
     "react/prop-types": 0,
     "react/jsx-curly-brace-presence": 0,

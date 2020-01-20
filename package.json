@@ -10,6 +10,7 @@
     "lint": "eslint --ext .jsx,.js src mocker",
     "lint:prettier": "prettier-files check",
     "prettier": "prettier-files write",
+    "prettier:check": "prettier-files check",
     "lint:fix": "eslint --fix --ext .js,.jsx src mocker",
     "lint-staged": "lint-staged",
     "lint-staged:js": "eslint --ext .js,.jsx"
@@ -42,7 +43,7 @@
   },
   "lint-staged": {
     "**/*.{js,ts,tsx,jsx,less}": [
-      "prettier-files check",
+      "prettier-files write",
       "git add"
     ],
     "**/*.{js,jsx}": "npm run lint-staged:js"

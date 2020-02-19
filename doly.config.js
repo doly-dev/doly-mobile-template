@@ -37,10 +37,6 @@ module.exports = {
     DEV: true
   },
 
-  devServer: {
-    hot: false
-  },
-
   // 不同环境配置
   env: {
     // 生产环境

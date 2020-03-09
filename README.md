@@ -6,7 +6,6 @@
 **默认集成以下模块**
 
 - [@wonder-ui/core](https://jian263994241.github.io/wonder-ui/styleguide/) - wonder框架和UI组件库，包含路由管理、页面切换动画等
-- [antd-mobile](https://mobile.ant.design/docs/react/introduce-cn) - UI组件库
 - [axios](https://github.com/axios/axios) - 请求
 - [eslint-config-doly-react](https://github.com/doly-dev/eslint-config-doly/tree/master/packages/eslint-config-doly-react) - 代码检查
 - [prettier-config-doly](https://github.com/doly-dev/prettier-config-doly) - 代码风格
@@ -27,7 +26,7 @@
 │   ├── utils                # 工具
 │   ├── app.js               # 入口 JS
 │   ├── router.config.js     # 路由配置
-│   ├── index.html           # html页面
+│   ├── document.ejs         # html页面
 ├── doly.config.js           # doly 配置
 ├── package.json
 ├── README.md

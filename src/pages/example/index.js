@@ -1,9 +1,9 @@
 import React from "react";
-import { Page, Button } from "@wonder-ui/core";
-import { NavBar, Icon } from "antd-mobile";
+import { Button } from "@wonder-ui/core";
 
-import services from "~/services";
+import PageContent from "~/components/PageContent";
 import Timer from "~/components/Timer";
+import services from "~/services";
 
 import styles from "./style.less";
 
@@ -42,16 +42,7 @@ export default class ExamplePage extends React.Component {
     const { loading, notices } = this.state;
 
     return (
-      <Page name="示例">
-        <NavBar
-          icon={<Icon type="left" />}
-          onLeftClick={() => {
-            const { history } = this.props;
-            history.goBack();
-          }}
-        >
-          示例
-        </NavBar>
+      <PageContent name="示例">
         <div className={styles.content}>
           <h3>Mock</h3>
           <div>
@@ -74,7 +65,7 @@ export default class ExamplePage extends React.Component {
           <h3>Component</h3>
           <Timer />
         </div>
-      </Page>
+      </PageContent>
     );
   }
 }

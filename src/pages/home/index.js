@@ -1,13 +1,12 @@
 import React from "react";
-import { NavBar } from "antd-mobile";
-import { Page, List, ListItem } from "@wonder-ui/core";
+import { List, ListItem } from "@wonder-ui/core";
 
+import PageContent from "~/components/PageContent";
 import routing from "~/stores/routing";
 
 export default function() {
   return (
-    <Page name="首页">
-      <NavBar>首页</NavBar>
+    <PageContent name="首页">
       <List renderHeader={() => `页面列表`}>
         <ListItem
           arrow="horizontal"
@@ -26,6 +25,6 @@ export default function() {
           不存在的页面
         </ListItem>
       </List>
-    </Page>
+    </PageContent>
   );
 }

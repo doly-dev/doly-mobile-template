@@ -17,7 +17,7 @@ module.exports = {
 
   // 扩展 babel-loader 的 plugins
   extraBabelPlugins: [
-    ["import", { libraryName: "antd-mobile", style: true }],
+    // ["import", { libraryName: "antd-mobile", style: true }],
     [
       "import",
       {

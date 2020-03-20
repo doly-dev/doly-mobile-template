@@ -40,7 +40,7 @@ module.exports = {
   env: {
     // 生产环境
     production: {
-      publicPath: "/", // 静态资源域名路径，如 https://img.99bill.com/
+      publicPath: "/", // 静态资源基础域名路径，如 https://img.99bill.com/
       html: {
         template: "src/document.ejs",
         filename: "seashell/webapp/product/project/index.html", // 构建后的html路径，如 seashell/webapp/x-project/agent/index.html
@@ -60,7 +60,8 @@ module.exports = {
         limit: 1024 * 8 // 小于该大小的图片转为base64
       },
       define: {
-        API_URL: "" // 生产环境的api地址
+        API_URL: "", // 生产环境的api地址
+        DEV: false
       }
     }
   }

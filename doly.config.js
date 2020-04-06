@@ -46,7 +46,8 @@ module.exports = {
         filename: "seashell/webapp/product/project/index.html", // 构建后的html路径，如 seashell/webapp/x-project/agent/index.html
         minify: {
           removeComments: true,
-          collapseWhitespace: true
+          collapseWhitespace: true,
+          minifyCSS: true
         }
       },
       outputFilename: "res/j/[name].[chunkhash:8].js", // js入口构建后路径

@@ -1,4 +1,4 @@
-const delay = require("doly-mocker-api/utils/delay");
+const delay = require("doly-mocker-api/utils/delay"); // eslint-disable-line
 const notices = require("./notices");
 
 const noMock = process.env.MOCK === "none";

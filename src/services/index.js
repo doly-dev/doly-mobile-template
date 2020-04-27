@@ -1,24 +1,44 @@
+import qs from "qs";
 import request from "./request";
 import api from "./api";
 
-const services = {};
+// 规整化URL
+function normalizeQueryUrl(url, params) {
+  if (typeof params === "object") {
+    const divider = url.indexOf("?") > -1 ? "&" : "?";
+    return `${url}${divider}${qs.stringify(params)}`;
+  }
+  return url;
+}
 
+// 构建请求方法
 function createService(apiOpts) {
   const { name, ...restOpts } = apiOpts;
-  return params => {
+  return data => {
     // 开发环境打印调试信息
     // eslint-disable-next-line
     if (DEV) {
-      // eslint-disable-next-line no-console
-      console.log(`${name} ${new Date()}`);
+      console.group(name); // eslint-disable-line no-console
+      console.log(`${restOpts.method} ${restOpts.url} ${new Date()}`); // eslint-disable-line no-console
+      console.log("params: ", data); // eslint-disable-line no-console
+      console.groupEnd(); // eslint-disable-line no-console
     }
 
-    return request({
-      ...restOpts,
-      ...params
-    });
+    const params = {
+      ...restOpts
+    };
+
+    if (params.method === "get") {
+      params.url = normalizeQueryUrl(params.url, data);
+    } else {
+      params.data = data;
+    }
+
+    return request(params);
   };
 }
+
+const services = {};
 
 for (const [key, value] of Object.entries(api)) {
   services[key] = createService(value);

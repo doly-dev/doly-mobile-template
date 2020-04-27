@@ -9,8 +9,8 @@ function isHomePage(path) {
 function PageContent({ children, ...restProps }) {
   return (
     <Page
-      navbar
-      showBack={!isHomePage(routing.location.pathname)}
+      navbar // 显示头部
+      showBack={!isHomePage(routing.location.pathname)} // 显示头部左侧返回
       {...restProps}
     >
       {children}

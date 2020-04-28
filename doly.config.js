@@ -3,11 +3,11 @@ const pkg = require("./package.json");
 
 module.exports = {
   entry: {
-    polyfill: [
+    [pkg.name]: [
       "./node_modules/core-js/stable",
-      "./node_modules/regenerator-runtime/runtime"
-    ],
-    [pkg.name]: "./src/app.js"
+      "./node_modules/regenerator-runtime/runtime",
+      "./src/app.js"
+    ]
   },
   html: {
     template: "src/document.ejs",
@@ -44,9 +44,9 @@ module.exports = {
   },
 
   // 用于本地开发调试低端设备，关闭HotModuleRepleace
-  // devServer: {
-  //   hot: false,
-  // },
+  devServer: {
+    hot: false
+  },
 
   // 不同环境配置
   env: {

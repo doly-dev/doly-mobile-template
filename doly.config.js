@@ -3,7 +3,7 @@ const pkg = require("./package.json");
 
 module.exports = {
   entry: {
-    [pkg.name]: ["./src/polyfill", "./src/app.js"]
+    [pkg.name]: ["./src/utils/polyfill", "./src/app.js"]
   },
   html: {
     template: "src/document.ejs",
@@ -40,9 +40,9 @@ module.exports = {
   },
 
   // 用于本地开发调试低端设备，关闭HotModuleRepleace
-  devServer: {
-    hot: false
-  },
+  // devServer: {
+  //   hot: false
+  // },
 
   // 不同环境配置
   env: {

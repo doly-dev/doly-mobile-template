@@ -1,5 +1,3 @@
-import "~/utils/polyfill";
-
 import React from "react";
 import ReactDom from "react-dom";
 import { App, View } from "@wonder-ui/core";

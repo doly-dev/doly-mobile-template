@@ -10,6 +10,21 @@ module.exports = {
     filename: "index.html"
   },
 
+  // 优化，可参考：https://webpack.docschina.org/plugins/split-chunks-plugin/
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          test: /node_modules/,
+          chunks: "all",
+          name: "vendor",
+          priority: -10,
+          enforce: true
+        }
+      }
+    }
+  },
+
   // 别名
   alias: {
     "~": path.join(__dirname, "./src")

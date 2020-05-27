@@ -28,10 +28,10 @@ function createService(apiOpts) {
       ...restOpts
     };
 
-    if (params.method === "get") {
-      params.url = normalizeQueryUrl(params.url, data);
+    if (params.method.toLowerCase() === "get") {
+      params.url = normalizeQueryUrl(params.url, data || params.data);
     } else {
-      params.data = data;
+      params.data = data || params.data;
     }
 
     return request(params);

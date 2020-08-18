@@ -22,7 +22,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@wonder-ui/core": "^1.1.1",
+    "@wonder-ui/core": "^1.2.4",
     "axios": "^0.19.2",
     "core-js": "^3.6.5",
     "qs": "^6.9.3",

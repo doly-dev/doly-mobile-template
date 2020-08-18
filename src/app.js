@@ -1,3 +1,5 @@
+import "./global.less";
+
 import React from "react";
 import ReactDom from "react-dom";
 import { App, View } from "@wonder-ui/core";

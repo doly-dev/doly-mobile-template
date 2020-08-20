@@ -68,5 +68,78 @@ npm run start:no-mock
 npm run build
 ```
 
+## 常用示例
 
+- #### 部分接口无需校验登录token，如登录接口
+
+`services/api.js` 中可自定义设置 `needToken` 为 `false` 。
+
+```javascript
+login: {
+  name: "登录接口",
+  url: "/user/login",
+  method: "post",
+  needToken: false
+}
+```
+
+`request.js` 中进行处理
+
+```javascript
+export default function request({
+  headers = {},
+  needToken = true,
+  ...options
+}) {
+  const dataHeader = {
+    ...headers
+  };
+
+  if (needToken) {
+    dataHeader.Authorization = getLoginToken();
+  }
+
+  return axios({
+    // eslint-disable-next-line
+    baseURL: API_URL, // 在 doly.config.js 中配置
+    headers: dataHeader,
+    ...options
+  }).then((res)=>{
+    // do something
+  }).catch(err=>{
+    // error
+  })
+}
+```
+
+- #### 使用上传文件接口
+
+`services/api.js` 中设置 `processData`、`contentType` 为 `false` 。
+
+```javascript
+// api.js
+
+uploadFile: {
+  name: "上传接口",
+  url: "/file/uploadFile",
+  method: "post",
+  processData: false,
+  contentType: false
+}
+```
+
+调用时，传入 `FormData` 数据
+
+```javascript
+// page.js
+
+const formData = new FormData();
+formData.append("fileName", file);
+
+services.uploadFile(formData).then((res)=>{
+  // do something
+}).catch(err=>{
+  // error
+});
+```
 

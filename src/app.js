@@ -11,9 +11,8 @@ const appConfig = {
   routerStore: routing,
   on: {
     pageInit(name) {
-      if (name) {
-        document.title = name;
-      }
+      const title = name || "";
+      document.title = title;
     }
   }
 };

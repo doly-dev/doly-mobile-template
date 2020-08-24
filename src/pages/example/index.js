@@ -1,7 +1,6 @@
 import React, { useState, useCallback } from "react";
-import { Button } from "@wonder-ui/core";
+import { Page, Button } from "@wonder-ui/core";
 
-import PageContent from "~/components/PageContent";
 import Timer from "~/components/Timer";
 import services from "~/services";
 
@@ -29,7 +28,7 @@ export default () => {
   }, []);
 
   return (
-    <PageContent name="示例">
+    <Page name="示例">
       <div className={styles.content}>
         <h3>Mock</h3>
         <div>
@@ -52,6 +51,6 @@ export default () => {
         <h3>Component</h3>
         <Timer />
       </div>
-    </PageContent>
+    </Page>
   );
 };
